@@ -11,6 +11,9 @@
 		028EF8C72F32EA930040152D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028EF8C62F32EA930040152D /* ContentView.swift */; };
 		028EF8C92F32EA950040152D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 028EF8C82F32EA950040152D /* Assets.xcassets */; };
 		028EF8CC2F32EA950040152D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 028EF8CB2F32EA950040152D /* Preview Assets.xcassets */; };
+		028EF8D92F32EBF80040152D /* MomentEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028EF8D82F32EBF80040152D /* MomentEntryView.swift */; };
+		029390102F3428DD002E98F7 /* Moment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0293900F2F3428DD002E98F7 /* Moment.swift */; };
+		029390122F342ED5002E98F7 /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029390112F342ED5002E98F7 /* DataContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		028EF8C62F32EA930040152D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		028EF8C82F32EA950040152D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		028EF8CB2F32EA950040152D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		028EF8D82F32EBF80040152D /* MomentEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentEntryView.swift; sourceTree = "<group>"; };
+		0293900F2F3428DD002E98F7 /* Moment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moment.swift; sourceTree = "<group>"; };
+		029390112F342ED5002E98F7 /* DataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +57,10 @@
 		028EF8C32F32EA930040152D /* GratefulMoments */ = {
 			isa = PBXGroup;
 			children = (
+				028EF8D52F32EB710040152D /* Tabs */,
+				028EF8D42F32EB500040152D /* Logic */,
+				028EF8D32F32EB4D0040152D /* Models  */,
+				028EF8D22F32EB300040152D /* Custom Views */,
 				028EF8C42F32EA930040152D /* GratefulMomentsApp.swift */,
 				028EF8C62F32EA930040152D /* ContentView.swift */,
 				028EF8C82F32EA950040152D /* Assets.xcassets */,
@@ -65,6 +75,53 @@
 				028EF8CB2F32EA950040152D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		028EF8D22F32EB300040152D /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		028EF8D32F32EB4D0040152D /* Models  */ = {
+			isa = PBXGroup;
+			children = (
+				0293900F2F3428DD002E98F7 /* Moment.swift */,
+			);
+			path = "Models ";
+			sourceTree = "<group>";
+		};
+		028EF8D42F32EB500040152D /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				029390112F342ED5002E98F7 /* DataContainer.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		028EF8D52F32EB710040152D /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				028EF8D62F32EB770040152D /* Moments */,
+				028EF8D72F32EB7C0040152D /* Achievements */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		028EF8D62F32EB770040152D /* Moments */ = {
+			isa = PBXGroup;
+			children = (
+				028EF8D82F32EBF80040152D /* MomentEntryView.swift */,
+			);
+			path = Moments;
+			sourceTree = "<group>";
+		};
+		028EF8D72F32EB7C0040152D /* Achievements */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Achievements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +194,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				029390122F342ED5002E98F7 /* DataContainer.swift in Sources */,
+				028EF8D92F32EBF80040152D /* MomentEntryView.swift in Sources */,
 				028EF8C72F32EA930040152D /* ContentView.swift in Sources */,
 				028EF8C52F32EA930040152D /* GratefulMomentsApp.swift in Sources */,
+				029390102F3428DD002E98F7 /* Moment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
