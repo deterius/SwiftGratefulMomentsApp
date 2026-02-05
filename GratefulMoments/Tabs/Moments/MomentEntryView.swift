@@ -1,18 +1,15 @@
-//
-//  MomentEntryView.swift
-//  GratefulMoments
-//
-//  Created by Simeon Bourim on 2/4/26.
-//
-
 import SwiftUI
 import PhotosUI
+import SwiftData
 
 struct MomentEntryView: View {
     @State private var title = ""
     @State private var note = ""
     @State private var newImage: PhotosPickerItem?
     @State private var imageData: Data?
+    @State private var isShowingCancelConfirmation = false
+
+    @Environment(DataContainer.self) private var dataContainer
     
     var body: some View {
         NavigationStack {
@@ -21,6 +18,37 @@ struct MomentEntryView: View {
             }
             .scrollDismissesKeyboard(.interactively)
             .navigationTitle("Grateful For")
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction){
+                    ToolbarItem(placement: .cancellationAction) {
+                                        Button("Cancel", systemImage: "xmark") {
+                                            isShowingCancelConfirmation = true
+                                        }
+                                        .confirmationDialog("Discard Moment", isPresented: $isShowingCancelConfirmation) {
+                                                                Button("Discard Moment", role: .destructive) {
+                                                                    dismiss()
+
+                                                                }
+                                                            }
+                                    }
+                    Button("Add", systemImage: "checkmark") {
+                        let newMoment = Moment(
+                            title:title,
+                            note: note,
+                            imageData: imageData,
+                            timestamp: .now
+                        )
+                        dataContainer.context.insert(newMoment)
+                        do {
+                            try dataContainer.context.save()
+                            dismiss()
+                        } catch {
+//                            dont dismiss
+                        }
+                            .disabled(title.isEmpty)
+                    }
+                }
+            }
         }
         
     }
